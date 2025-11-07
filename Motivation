@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Enricos Motivation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f0f0f0;
+        }
+        .message {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Hallo Enrico!</h1>
+    <p>Grund für den Ausflug:</p>
+    <input type="text" id="reasonInput" placeholder="z. B. Restaurant-Gutschein">
+    <button onclick="showMessage()">Los geht's!</button>
+ 
+    <div class="message" id="messageBox"></div>
+ 
+    <script>
+        function leaveHouse(reason) {
+            return reason === "Restaurant-Gutschein"
+                ? "Los geht's, Enrico! 🍽️"
+                : "Gemütlich daheim 😌";
+        }
+ 
+        function showMessage() {
+            const reason = document.getElementById("reasonInput").value;
+            const message = leaveHouse(reason);
+            document.getElementById("messageBox").textContent = message;
+        }
+    </script>
+</body>
+</html>
